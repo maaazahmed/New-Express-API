@@ -1,4 +1,3 @@
-// https://www.youtube.com/watch?v=iUqjlzTGGbU
 var express = require("express")
 var router = express.Router()
 var mongoose = require("mongoose")
@@ -7,11 +6,9 @@ var CheckOut = require("../models/CheckOutModal")
 
 
 
-
-
 // ====>>>  Checkout
 // ====>>>  URL :  http://localhost:8000//checkOut
-router.post("/checkOut", (req, res) => {
+router.post("/addOrder", (req, res) => {
     const checkOut = new CheckOut({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -42,7 +39,7 @@ router.post("/checkOut", (req, res) => {
 
 // ====>>>  Getting Checkouts
 // ====>>>  URL :  http://localhost:8000//GetChekouts
-router.get("/GetChekouts", (req, res) => {
+router.get("/getOrder", (req, res) => {
     CheckOut.find().exec().then((data) => {
         res.send({
             checkouts: data
@@ -56,6 +53,6 @@ router.get("/GetChekouts", (req, res) => {
 })
 
 
-const Order = router
-module.exports = Order
+const order = router
+module.exports = order
 

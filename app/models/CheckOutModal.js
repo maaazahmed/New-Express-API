@@ -9,5 +9,5 @@ const checkoutSchema = mongoose.Schema({
     state: { type: String, required: true, },
     contry: { type: String, required: true, },
 })
-module.exports = mongoose.model("Checkout", checkoutSchema)
+module.exports = mongoose.model("Orders", checkoutSchema)
 

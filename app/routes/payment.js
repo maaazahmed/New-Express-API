@@ -1,11 +1,8 @@
-// https://www.youtube.com/watch?v=iUqjlzTGGbU
 var express = require("express")
 var router = express.Router()
 var mongoose = require("mongoose")
-mongoose.connect("mongodb://quizapp:maaz1234@ds227664.mlab.com:27664/quiz_data");
 var Payment = require("../models/PaymentModal")
-
-
+mongoose.connect("mongodb://quizapp:maaz1234@ds227664.mlab.com:27664/quiz_data");
 
 
 
