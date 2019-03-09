@@ -17,4 +17,4 @@ app.use("/product", product);
 app.use("/order", order);
 app.use("/payment", payment);
 
-app.listen(app.get("port"),()=>console.log("sunning"))
+app.listen(app.get("port"),()=>console.log("Server is running on prot 8000"))
