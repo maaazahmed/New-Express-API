@@ -1,7 +1,8 @@
 var express = require("express")
 var router = express.Router()
 var mongoose = require("mongoose")
-mongoose.connect("mongodb://quizapp:maaz1234@ds227664.mlab.com:27664/quiz_data");
+mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
+
 var CheckOut = require("../models/CheckOutModal")
 
 
@@ -22,7 +23,7 @@ router.post("/addOrder", (req, res) => {
     checkOut.save((error, success) => {
         if (!error) {
             res.send({
-                message: "successful checkout !",
+                message: "Order successfuly submited !",
                 data: checkOut
             })
         }

@@ -2,7 +2,8 @@ var express = require("express")
 var account = express.Router()
 var mongoose = require("mongoose")
 var bcrypt = require("bcrypt");
-mongoose.connect("mongodb://quizapp:maaz1234@ds227664.mlab.com:27664/quiz_data");
+mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
+// mongoose.connect("mongodb://quizapp:maaz1234@ds227664.mlab.com:27664/quiz_data");
 var User = require("../models/userModel")
 
 
