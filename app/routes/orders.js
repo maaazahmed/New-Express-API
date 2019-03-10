@@ -1,9 +1,8 @@
 var express = require("express")
 var router = express.Router()
 var mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
-
 var CheckOut = require("../models/CheckOutModal")
+mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
 
 
 
@@ -13,8 +12,8 @@ router.post("/addOrder", (req, res) => {
     const checkOut = new CheckOut({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        AddressLine1: req.body.AddressLine1,
-        AddressLine2: req.body.AddressLine2,
+        addressLine1: req.body.addressLine1,
+        addressLine2: req.body.addressLine2,
         city: req.body.city,
         zip: Number(req.body.zip),
         state: req.body.state,

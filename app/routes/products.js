@@ -2,13 +2,7 @@ var express = require("express")
 var router = express.Router()
 var mongoose = require("mongoose")
 var Product = require("../models/ProductModal")
-// mongoose.connect("mongodb://quizapp:maaz1234@ds227664.mlab.com:27664/quiz_data");
 mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
-
-
-
-
-
 
 
 
@@ -100,53 +94,53 @@ var aa = [
         imageUri: "https://tokbox.com/blog/wp-content/uploads/2018/03/React-Native-for-OpenTok-blog-feature-image-287x287.png",
         name: "Helena",
         doller: "120",
-        category: "Sorts",
+        category: "Shorts",
     },
     {
         imageUri: "https://tokbox.com/blog/wp-content/uploads/2018/03/React-Native-for-OpenTok-blog-feature-image-287x287.png",
         name: "Anne-Short",
         doller: "180",
-        category: "Sorts",
+        category: "Shorts",
     },
     {
         imageUri: "https://tokbox.com/blog/wp-content/uploads/2018/03/React-Native-for-OpenTok-blog-feature-image-287x287.png",
         name: "Abudia",
         category: "Drasses",
         priceOne: 80,
-        category: "Sorts",
+        category: "Shorts",
     }, {
         imageUri: "https://tokbox.com/blog/wp-content/uploads/2018/03/React-Native-for-OpenTok-blog-feature-image-287x287.png",
         name: "Abudia",
         category: "Drasses",
         priceOne: 80,
-        category: "Sorts",
+        category: "Shorts",
     },
     {
         imageUri: "https://tokbox.com/blog/wp-content/uploads/2018/03/React-Native-for-OpenTok-blog-feature-image-287x287.png",
         name: "Abudia",
         category: "Drasses",
         priceOne: 80,
-        category: "Sorts",
+        category: "Shorts",
     },
     {
         imageUri: "https://tokbox.com/blog/wp-content/uploads/2018/03/React-Native-for-OpenTok-blog-feature-image-287x287.png",
         name: "Abudia",
         category: "Drasses",
         priceOne: 80,
-        category: "Sorts",
+        category: "Shorts",
     },
     {
         imageUri: "https://tokbox.com/blog/wp-content/uploads/2018/03/React-Native-for-OpenTok-blog-feature-image-287x287.png",
         name: "Helena",
         priceOne: 80,
-        category: "Sorts",
+        category: "Shorts",
         category: "Skrits",
     },
     {
         imageUri: "https://tokbox.com/blog/wp-content/uploads/2018/03/React-Native-for-OpenTok-blog-feature-image-287x287.png",
         name: "Anne-Short",
         priceOne: 80,
-        category: "Sorts",
+        category: "Shorts",
         category: "Skrits",
     },
     {
@@ -183,12 +177,22 @@ var aa = [
 
 
 
+router.post("/addProduct", (req, res) => {
+    Product.collection.insertMany(aa, (a, b) => {
+        res.send(a || b)
+    })
+})
+
+
 
 // ====>>>  Getting Products
 // ====>>>  URL :  http://localhost:8000//getProducts:catogory (Shoes, Drasses, etc) 
-router.get("/getProducts:catogory", (req, res) => {
-    const id = req.params.catogory.slice(1)
-    Product.find({ category: id }).exec().then((data) => {
+router.get("/getProducts", (req, res) => {
+    // console.log(req.query.category)
+    // const id = "Shorts"
+    // // const id = req.params.catogory.slice(1)
+
+    Product.find({ category: req.query.category }).exec().then((data) => {
         res.send(data)
     }).catch((error) => {
         res.send(error)

@@ -2,9 +2,8 @@ var express = require("express")
 var account = express.Router()
 var mongoose = require("mongoose")
 var bcrypt = require("bcrypt");
-mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
-// mongoose.connect("mongodb://quizapp:maaz1234@ds227664.mlab.com:27664/quiz_data");
 var User = require("../models/userModel")
+mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
 
 
 
@@ -57,7 +56,7 @@ account.post("/signin", (req, res) => {
         then((user) => {
             if (user < 1) {
                 res.status(401).json({
-                    message: "Auth field"
+                    message: "Invalid email or password !"
                 })
             }
             bcrypt.compare(req.body.password, user[0].password, async (err, result) => {
