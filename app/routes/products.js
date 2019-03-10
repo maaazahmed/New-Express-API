@@ -5,11 +5,8 @@ var Product = require("../models/ProductModal")
 mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
 
 
-
-
-
-// ====>>>  Getting Products
-// ====>>>  URL :  http://localhost:8000//getProducts:catogory (Shoes, Drasses, etc) 
+// ====>>>  Getting Products 
+// ====>>>  URL :  http://localhost:8000/product/getProducts?category=Shorts (Shoes, Drasses, etc) 
 router.get("/getProducts", (req, res) => {
     Product.find({ category: req.query.category }).exec().then((data) => {
         res.send(data)
