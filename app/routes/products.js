@@ -8,14 +8,6 @@ mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryW
 
 
 
-
-
-
-
-
-
-
-
 // ====>>>  Getting Products
 // ====>>>  URL :  http://localhost:8000//getProducts:catogory (Shoes, Drasses, etc) 
 router.get("/getProducts", (req, res) => {
