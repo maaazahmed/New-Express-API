@@ -2,8 +2,11 @@ var express = require("express")
 var bodyParser = require("body-parser")
 var cors = require("cors");
 var app = express()
+var mongoose = require("mongoose")
 app.set("port", process.env.PORT || 8000)
 app.use(bodyParser.urlencoded({ extended: true }))
+mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
+
 
 var account = require("./app/routes/accounts")
 var product = require("./app/routes/products")

@@ -3,7 +3,6 @@ var account = express.Router()
 var mongoose = require("mongoose")
 var bcrypt = require("bcrypt");
 var User = require("../models/userModel")
-mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
 
 
 

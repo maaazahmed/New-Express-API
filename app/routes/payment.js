@@ -2,7 +2,6 @@ var express = require("express")
 var router = express.Router()
 var mongoose = require("mongoose")
 var Payment = require("../models/PaymentModal")
-mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryWrites=true");
 
 
 
