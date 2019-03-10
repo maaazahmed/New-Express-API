@@ -13,11 +13,6 @@ mongoose.connect("mongodb+srv://test:test@cluster0-tmgwr.mongodb.net/test?retryW
 
 
 
-router.post("/addProduct", (req, res) => {
-    Product.collection.insertMany(aa, (a, b) => {
-        res.send(a || b)
-    })
-})
 
 
 
